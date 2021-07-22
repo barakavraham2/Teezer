@@ -10,8 +10,14 @@
   font-family: 'Montserrat', sans-serif; 
 }
 .teezer{
-  font-size: 20vw;
+  font-size: 10vw;
   height: fit-content;
+}
+@media only screen and (max-width: 600px) {
+  .teezer{
+    font-size: 22vw;
+    height: fit-content;
+  }
 }
 .comingsoon{
   text-align:center; 
