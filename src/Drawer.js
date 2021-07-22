@@ -32,7 +32,7 @@ function DrawerB() {
                 <Drawer className="drawerDemo"
                     show={isDrawerOpen}
                     onHide={closeDrawer}
-                    full={ifMobile}
+                    full={false}
                 >
                     <Drawer.Header>
                         <Drawer.Title>Teezer</Drawer.Title>
