@@ -22,7 +22,7 @@ function DrawerB() {
     }
     return (
         <div style={{
-            display: 'block', width: 700, paddingLeft: 5
+            display: 'block', width: 200, paddingLeft: 5
         }}>
 
             <div>
@@ -32,6 +32,7 @@ function DrawerB() {
                 <Drawer className="drawerDemo"
                     show={isDrawerOpen}
                     onHide={closeDrawer}
+                    full={false}
                 >
                     <Drawer.Header>
                         <Drawer.Title>Teezer</Drawer.Title>

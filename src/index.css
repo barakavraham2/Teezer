@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Zen+Loop:ital@0;1&display=swap');
-
+.drawerDemo{
+  max-width: 50%;
+}
 .rs-content{
   display: flex;
   justify-content: center;
@@ -8,7 +10,7 @@
   font-family: 'Montserrat', sans-serif; 
 }
 .teezer{
-  font-size: 10vw;
+  font-size: 20vw;
   height: fit-content;
 }
 .comingsoon{
@@ -26,6 +28,7 @@
 .btnNav{
   display: block !important;
   width: 100%;
+  text-align: center !important;
   background-color: transparent !important;
   font-family: 'Montserrat', sans-serif; 
   font-size: 20px !important;
