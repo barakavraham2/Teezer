@@ -33,6 +33,7 @@ function DrawerB() {
                     show={isDrawerOpen}
                     onHide={closeDrawer}
                     full={false}
+
                 >
                     <Drawer.Header>
                         <Drawer.Title>Teezer</Drawer.Title>
