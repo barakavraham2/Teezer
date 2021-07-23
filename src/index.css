@@ -29,6 +29,18 @@
     font-size: 22vw;
     height: fit-content;
   }
+  .About{
+    margin: 2vh;
+    height: 300px;
+  }
+  .AboutHead{
+    font-size: 50px;
+  }
+  
+  .aboutCon{
+    font-size: 50px;
+  }
+
 }
 .comingsoon{
   text-align:center; 
