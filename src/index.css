@@ -2,7 +2,11 @@
 .drawerDemo{
   max-width: 70%;
 }
-
+@media only screen and (min-width: 700px) {
+  .drawerDemo{
+    max-width: 20%;
+  }
+}
 .rs-content{
   display: flex;
   justify-content: center;
