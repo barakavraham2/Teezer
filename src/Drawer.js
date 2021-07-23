@@ -4,6 +4,7 @@ import { useState } from 'react'
 import 'rsuite/dist/styles/rsuite-default.css';
 import ContectUs from './comp/ContectUs';
 import { Link } from 'react-router-dom';
+import ico from './img/favicon.png'
 function DrawerB() {
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -36,7 +37,7 @@ function DrawerB() {
 
                 >
                     <Drawer.Header>
-                        <Drawer.Title style={{ fontFamily: 'Montserrat' }}>Teezer</Drawer.Title>
+                        <Drawer.Title style={{ fontFamily: 'Montserrat' }}><img src={ico} style={{ width: '15px', height: '15px' }} className="mb-2"></img> Teezer</Drawer.Title>
                     </Drawer.Header>
                     <Divider />
                     <Drawer.Body>
@@ -44,10 +45,10 @@ function DrawerB() {
                             <Link to="/"><Button className="btnNav" onClick={handleSubmit}>Home</Button></Link>
                         </div>
                         <div className="navItem">
-                            <Link to="/contact"><Button className="btnNav" onClick={handleSubmit}>Contact Us</Button></Link>
+                            <Link to="/about"><Button className="btnNav" onClick={handleSubmit}>About</Button></Link>
                         </div>
                         <div className="navItem">
-                            <Link to="/about"><Button className="btnNav" onClick={handleSubmit}>About</Button></Link>
+                            <Link to="/contact"><Button className="btnNav" onClick={handleSubmit}>Contact Us</Button></Link>
                         </div>
                     </Drawer.Body>
                     <Drawer.Footer>

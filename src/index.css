@@ -7,6 +7,9 @@
     max-width: 20%;
   }
 }
+.mb-2{
+  margin-bottom: 5px;
+}
 .rs-content{
   display: flex;
   justify-content: center;
