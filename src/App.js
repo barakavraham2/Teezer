@@ -1,21 +1,25 @@
 import './App.css';
 import { Container, Content, FlexboxGrid } from 'rsuite';
 import DrawerB from './Drawer';
-
+import ContectUs from './comp/ContectUs';
+import Home from './comp/Home';
+import About from './comp/About';
+import { Switch, Route } from 'react-router-dom'
 function App() {
   return (
     <Container className="container">
       <DrawerB></DrawerB>
-      <Content>
-        <div className="headLine">
-          <div className="teezer">
-            T e e z e r
-          </div>
-          <div className="comingsoon">
-            <p>Coming Soon...</p>
-          </div>
-        </div>
-      </Content>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/contact">
+          <ContectUs />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+      </Switch>
     </Container>
   );
 }

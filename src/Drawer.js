@@ -2,13 +2,10 @@ import React, { useEffect } from 'react';
 import { ButtonToolbar, Button, Drawer, Paragraph, Icon, Divider, Nav } from 'rsuite'
 import { useState } from 'react'
 import 'rsuite/dist/styles/rsuite-default.css';
+import ContectUs from './comp/ContectUs';
+import { Link } from 'react-router-dom';
 function DrawerB() {
-    let width = window.innerWidth;
-    const [ifMobile, setIfMobile] = useState()
-    useEffect(() => {
-        width > 500 ? width = false : width = true
-    }, [])
-    // Drawer state
+
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
     // Function to close drawer
@@ -19,6 +16,10 @@ function DrawerB() {
     // Function to toggle Drawer
     const toggleDrawer = () => {
         setIsDrawerOpen(true);
+    }
+
+    const handleSubmit = () => {
+        setIsDrawerOpen(false)
     }
     return (
         <div style={{
@@ -36,21 +37,22 @@ function DrawerB() {
 
                 >
                     <Drawer.Header>
-                        <Drawer.Title>Teezer</Drawer.Title>
+                        <Drawer.Title style={{ fontFamily: 'Montserrat' }}>Teezer</Drawer.Title>
                     </Drawer.Header>
                     <Divider />
                     <Drawer.Body>
 
                         <div className="navItem">
-                            <Button className="btnNav">Contact Us</Button>
+                            <Link to="/contact"><Button className="btnNav" onClick={handleSubmit}>Contact Us</Button></Link>
                         </div>
                         <div className="navItem">
-                            <Button className="btnNav">Team</Button>
+                            <Link to="/about"><Button className="btnNav" onClick={handleSubmit}>About</Button></Link>
                         </div>
                     </Drawer.Body>
                     <Drawer.Footer>
                     </Drawer.Footer>
                 </Drawer>
+
             </div>
         </div>
     );
