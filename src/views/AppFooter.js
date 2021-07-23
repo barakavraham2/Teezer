@@ -7,6 +7,8 @@ import Typography from '../comp/Typography'
 import { TextField } from '@material-ui/core'
 import { Icon } from 'rsuite';
 import { fontWeight } from '@material-ui/system';
+import Bounce from 'react-reveal/Bounce';
+
 function Copyright() {
     return (
         <React.Fragment>
@@ -72,6 +74,7 @@ export default function AppFooter() {
 
     return (
         <Typography component="footer" className={classes.root}>
+
             <Container className={classes.container}>
                 <Grid container spacing={5}>
                     <Grid item xs={6} sm={4} md={3}>
@@ -110,6 +113,7 @@ export default function AppFooter() {
 
                 </Grid>
             </Container>
+
         </Typography>
     );
 }

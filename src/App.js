@@ -8,6 +8,8 @@ import About from './comp/About';
 import { Switch, Route } from 'react-router-dom'
 import AppFooter from './views/AppFooter';
 import Scroll from 'react-scroll';
+import Fade from 'react-reveal/Fade';
+import Bounce from 'react-reveal/Bounce';
 
 function App() {
 
@@ -28,7 +30,9 @@ function App() {
           </Route>
         </Switch>
       </Container>
-      <AppFooter />
+      <Bounce bottom>
+        <AppFooter />
+      </Bounce>
     </div>
   );
 }
