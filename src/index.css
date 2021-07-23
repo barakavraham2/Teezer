@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Zen+Loop:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+
 .drawerDemo{
   max-width: 70%;
 }
@@ -49,4 +52,44 @@
 }
 .rs-drawer-title{
   text-align: center;
+}
+
+.About{
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 2vh 10vh 2vh 10vh;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.logo{
+	background: linear-gradient(-45deg, #F25C54, #f73e34);
+display: inline-block;
+overflow: hidden;
+position: absolute;
+padding: 20px;
+border-radius: 50%;
+top:-1px;
+margin-top: 10px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.logo-item{
+  height: 4vw;
+  width: 4vw;
+}
+.AboutHead{
+  color: black;
+  margin-top: 6vw;
+  font-size: 3vw;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+
+.aboutCon{
+  margin-top: 4vw;
+  font-size: 1vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; 
+  color: gray;
 }
