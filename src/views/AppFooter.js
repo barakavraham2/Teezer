@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     icon: {
-        width: 48,
-        height: 48,
+        width: 30,
+        height: 30,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
