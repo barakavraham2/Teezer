@@ -57,7 +57,7 @@ export default function ContectUs() {
             <main className={classes.layout}>
                 <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
                     <Typography component="h1" variant="h4" align="center" style={{ fontFamily: 'Montserrat' }}>
-                        Contect Us
+                        Contact Us
                     </Typography>
                     <ContactForm />
                     <div className={classes.buttons}>

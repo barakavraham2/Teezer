@@ -6,13 +6,13 @@ import Container from '@material-ui/core/Container';
 import Typography from '../comp/Typography'
 import { TextField } from '@material-ui/core'
 import { Icon } from 'rsuite';
-
+import { fontWeight } from '@material-ui/system';
 function Copyright() {
     return (
         <React.Fragment>
             {'© '}
             <Link color="inherit" href="https://material-ui.com/">
-                Your Website
+                Teezer
             </Link>{' '}
             {new Date().getFullYear()}
         </React.Fragment>
@@ -22,9 +22,11 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
         boxShadow: 'rgba(0, 0, 0, 0.50) 0px 1px 4px',
-        marginBottom: 0
+        marginBottom: 0,
+        fontFamily: 'Montserrat',
+        fontWeight: 'bold'
     },
     container: {
         marginTop: theme.spacing(8),
@@ -44,12 +46,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'black',
         borderRadius: '50%',
+        boxShadow: 'rgba(0, 0, 0, 0.50) 0px 1px 4px',
         marginRight: theme.spacing(1),
-        '&:hover': {
-            backgroundColor: 'gray',
-        },
+        color: 'white'
     },
     list: {
         margin: 0,
@@ -66,16 +66,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const LANGUAGES = [
-    {
-        code: 'en-US',
-        name: 'English',
-    },
-    {
-        code: 'fr-FR',
-        name: 'Français',
-    },
-];
 
 export default function AppFooter() {
     const classes = useStyles();
@@ -93,9 +83,9 @@ export default function AppFooter() {
                             spacing={2}
                         >
                             <Grid item className={classes.icons}>
-                                <a href="https://material-ui.com/" className={classes.icon}>
-                                    <Icon icon="facebook"></Icon>                                </a>
-                                <a href="https://twitter.com/MaterialUI" className={classes.icon}>
+                                <a href="" className={classes.icon} id="facebook">
+                                    <Icon icon="facebook"></Icon></a>
+                                <a href="" className={classes.icon} id="instagram">
                                     <Icon icon="instagram"></Icon>
                                 </a>
                             </Grid>
@@ -110,31 +100,14 @@ export default function AppFooter() {
                         </Typography>
                         <ul className={classes.list}>
                             <li className={classes.listItem}>
-                                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                                <Link href="">Terms</Link>
                             </li>
                             <li className={classes.listItem}>
-                                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                                <Link href="">Privacy</Link>
                             </li>
                         </ul>
                     </Grid>
-                    <Grid item xs={6} sm={8} md={4}>
-                        <Typography variant="h6" marked="left" gutterBottom>
-                            Language
-                        </Typography>
-                        <TextField
-                            select
-                            SelectProps={{
-                                native: true,
-                            }}
-                            className={classes.language}
-                        >
-                            {LANGUAGES.map((language) => (
-                                <option value={language.code} key={language.code}>
-                                    {language.name}
-                                </option>
-                            ))}
-                        </TextField>
-                    </Grid>
+
                 </Grid>
             </Container>
         </Typography>

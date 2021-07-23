@@ -23,9 +23,8 @@ function DrawerB() {
     }
     return (
         <div style={{
-            display: 'block', width: 200, paddingLeft: 5
+            display: 'block', paddingLeft: 5, direction: 'rtl'
         }}>
-
             <div>
                 <Button onClick={toggleDrawer} style={{ backgroundColor: 'transparent' }}>
                     <Icon icon="bars"></Icon>
@@ -41,7 +40,9 @@ function DrawerB() {
                     </Drawer.Header>
                     <Divider />
                     <Drawer.Body>
-
+                        <div className="navItem">
+                            <Link to="/"><Button className="btnNav" onClick={handleSubmit}>Home</Button></Link>
+                        </div>
                         <div className="navItem">
                             <Link to="/contact"><Button className="btnNav" onClick={handleSubmit}>Contact Us</Button></Link>
                         </div>

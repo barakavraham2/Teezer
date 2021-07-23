@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="page">
-      <Container className="container" style={{ height: '100%' }}>
+      <Container className="container">
         <DrawerB></DrawerB>
         <Switch>
           <Route exact path="/">
