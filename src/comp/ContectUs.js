@@ -15,14 +15,14 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles((theme) => ({
+
     paper: {
         marginTop: theme.spacing(3),
         marginBottom: theme.spacing(3),
         padding: theme.spacing(2),
         marginLeft: 'auto',
         marginRight: 'auto',
-        width: 'auto',
-        backgroundColor: 'white'
+        width: 'auto'
     },
     stepper: {
         padding: theme.spacing(3, 0, 5),
@@ -76,7 +76,7 @@ function ContectUs() {
     return (
         <>
 
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
