@@ -21,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto',
         width: 'auto'
     },
-    stepper: {
-        padding: theme.spacing(3, 0, 5),
-    },
     buttons: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -83,7 +80,6 @@ function ContectUs() {
                             required
                             name="firstName"
                             label="First name"
-                            fullWidth
                             onChange={(e) => { setForm({ ...form, firstName: e.target.value }) }}
                             style={{ background: 'transparent ' }}
                             placeholder="First name"
@@ -94,7 +90,6 @@ function ContectUs() {
                                 required
                                 name="lastName"
                                 label="Last name"
-                                fullWidth
                                 onChange={(e) => { setForm({ ...form, lastName: e.target.value }) }}
                                 style={{ background: 'transparent ' }}
                                 placeholder="Last name"
@@ -105,7 +100,6 @@ function ContectUs() {
                                 required
                                 name="Email"
                                 label="Email"
-                                fullWidth
                                 onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
                                 style={{ background: 'transparent ' }}
                                 placeholder="Email"
