@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -64,7 +63,6 @@ export default function ContectUs() {
         email: '',
         message: ''
     });
-
     const handleSubmit = () => {
         if (!loading) {
             setLoading(true)
@@ -88,13 +86,12 @@ export default function ContectUs() {
     }
     return (
         <>
-            <CssBaseline />
-            <main className={classes.layout}>
+            <main className={classes.layout} >
                 <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
                     <Typography component="h1" variant="h4" align="center" style={{ fontFamily: 'Montserrat' }}>
                         Contact Us
                     </Typography>
-                    <Grid container={!success} spacing={3} style={{ textAlign: 'center' }}>
+                    <Grid container spacing={3} style={{ textAlign: 'center' }} >
                         {!success && <>      <Grid item xs={12} sm={6}>
                             <TextField
                                 required
