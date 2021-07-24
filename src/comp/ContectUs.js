@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         marginLeft: 'auto',
         marginRight: 'auto',
-        width: 'auto'
+        width: 'auto',
+        backgroundColor: 'white'
     },
     stepper: {
         padding: theme.spacing(3, 0, 5),
@@ -75,7 +76,7 @@ function ContectUs() {
     return (
         <>
 
-            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+            <Paper className={classes.paper}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
