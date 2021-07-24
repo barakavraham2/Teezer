@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <div className="page">
+    <>
       <Container className="container">
         <DrawerB></DrawerB>
         <Switch>
@@ -30,10 +30,7 @@ function App() {
           </Route>
         </Switch>
       </Container>
-      <Fade up>
-        <AppFooter />
-      </Fade>
-    </div>
+    </>
   );
 }
 
