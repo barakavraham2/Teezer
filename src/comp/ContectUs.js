@@ -77,46 +77,46 @@ function ContectUs() {
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
-                <Grid container={!success} spacing={3} style={{ textAlign: 'center' }} >
-                    {!success && <>      <Grid item xs={12} sm={6}>
-                        <TextField
+                <Grid container={(!success)} spacing={3} style={{ textAlign: 'center' }} >
+                    {(!success) && <>      <Grid item xs={12} sm={6}>
+                        <Input
                             required
-                            id="outlined-basic"
                             name="firstName"
                             label="First name"
                             fullWidth
                             onChange={(e) => { setForm({ ...form, firstName: e.target.value }) }}
+                            style={{ background: 'transparent ' }}
+                            placeholder="First name"
                         />
                     </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField
+                            <Input
                                 required
-                                id="outlined-basic"
                                 name="lastName"
                                 label="Last name"
                                 fullWidth
                                 onChange={(e) => { setForm({ ...form, lastName: e.target.value }) }}
-
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                required
-                                id="outlined-basic"
-                                name="Email"
-                                label="Email"
-                                fullWidth
-                                onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
-
+                                style={{ background: 'transparent ' }}
+                                placeholder="Last name"
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <Input
-                                id="outlined-basic"
+                                required
+                                name="Email"
+                                label="Email"
+                                fullWidth
+                                onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
+                                style={{ background: 'transparent ' }}
+                                placeholder="Email"
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Input
                                 name="Message"
                                 label="Message"
                                 componentClass="textarea"
-                                rows={8}
+                                rows={6}
                                 style={{ background: 'transparent ' }}
                                 placeholder="Message..."
 
@@ -139,7 +139,7 @@ function ContectUs() {
                     </Grid>
                 </Grid>
                 <div className={classes.buttons}>
-                    {!success && <Button onClick={handleSubmit} className={classes.button}>
+                    {(!success) && <Button onClick={handleSubmit} className={classes.button}>
                         Submit      {loading && <CircularProgress />}
                     </Button>}
 
