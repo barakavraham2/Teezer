@@ -30,9 +30,9 @@ function App() {
           </Route>
         </Switch>
       </Container>
-      <Bounce bottom>
+      <Fade up>
         <AppFooter />
-      </Bounce>
+      </Fade>
     </div>
   );
 }
