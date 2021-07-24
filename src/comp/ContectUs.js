@@ -15,17 +15,13 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles((theme) => ({
-    layout: {
-        width: 'auto',
-        marginLeft: theme.spacing(2),
-        marginRight: theme.spacing(2),
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
     paper: {
         marginTop: theme.spacing(3),
         marginBottom: theme.spacing(3),
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: 'auto'
     },
     stepper: {
         padding: theme.spacing(3, 0, 5),
@@ -78,80 +74,79 @@ function ContectUs() {
     }
     return (
         <>
-            <main className={classes.layout} >
-                <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
-                    <h1 style={{ fontFamily: 'Montserrat' }}>
-                        Contact Us
-                    </h1>
-                    <Grid container={!success} spacing={3} style={{ textAlign: 'center' }} >
-                        {!success && <>      <Grid item xs={12} sm={6}>
+
+            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+                <h1 style={{ fontFamily: 'Montserrat' }}>
+                    Contact Us
+                </h1>
+                <Grid container={!success} spacing={3} style={{ textAlign: 'center' }} >
+                    {!success && <>      <Grid item xs={12} sm={6}>
+                        <TextField
+                            required
+                            id="outlined-basic"
+                            name="firstName"
+                            label="First name"
+                            fullWidth
+                            onChange={(e) => { setForm({ ...form, firstName: e.target.value }) }}
+                        />
+                    </Grid>
+                        <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="outlined-basic"
-                                name="firstName"
-                                label="First name"
+                                name="lastName"
+                                label="Last name"
                                 fullWidth
-                                onChange={(e) => { setForm({ ...form, firstName: e.target.value }) }}
+                                onChange={(e) => { setForm({ ...form, lastName: e.target.value }) }}
+
                             />
                         </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    required
-                                    id="outlined-basic"
-                                    name="lastName"
-                                    label="Last name"
-                                    fullWidth
-                                    onChange={(e) => { setForm({ ...form, lastName: e.target.value }) }}
+                        <Grid item xs={12}>
+                            <TextField
+                                required
+                                id="outlined-basic"
+                                name="Email"
+                                label="Email"
+                                fullWidth
+                                onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
 
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    id="outlined-basic"
-                                    name="Email"
-                                    label="Email"
-                                    fullWidth
-                                    onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
-
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Input
-                                    id="outlined-basic"
-                                    name="Message"
-                                    label="Message"
-                                    componentClass="textarea"
-                                    rows={8}
-                                    style={{ background: 'transparent ' }}
-                                    placeholder="Message..."
-
-                                    onChange={(id, e) => { setForm({ ...form, message: e.target.value }) }}
-
-                                />
-                            </Grid>
-                        </>
-                        }
-
-                        {success && <>
-                            <Fade up>
-                                <Grid item xs={12} className="align-items-xs-center" style={{ display: displayCircle }} >
-                                    <CheckCircleOutlineIcon style={{ color: 'green', fontSize: '200px' }} />
-                                </Grid>
-                            </Fade>
-                        </>}
-                        <Grid style={{ textAlign: 'center' }}>
-                            {errorMessage && <Message type="error" description={String(errorMessage)}></Message>}
+                            />
                         </Grid>
-                    </Grid>
-                    <div className={classes.buttons}>
-                        {!success && <Button onClick={handleSubmit} className={classes.button}>
-                            Submit      {loading && <CircularProgress />}
-                        </Button>}
+                        <Grid item xs={12}>
+                            <Input
+                                id="outlined-basic"
+                                name="Message"
+                                label="Message"
+                                componentClass="textarea"
+                                rows={8}
+                                style={{ background: 'transparent ' }}
+                                placeholder="Message..."
 
-                    </div>
-                </Paper>
-            </main>
+                                onChange={(id, e) => { setForm({ ...form, message: e.target.value }) }}
+
+                            />
+                        </Grid>
+                    </>
+                    }
+
+                    {success && <>
+                        <Fade up>
+                            <Grid item xs={12} className="align-items-xs-center" style={{ display: displayCircle }} >
+                                <CheckCircleOutlineIcon style={{ color: 'green', fontSize: '200px' }} />
+                            </Grid>
+                        </Fade>
+                    </>}
+                    <Grid style={{ textAlign: 'center' }}>
+                        {errorMessage && <Message type="error" description={String(errorMessage)}></Message>}
+                    </Grid>
+                </Grid>
+                <div className={classes.buttons}>
+                    {!success && <Button onClick={handleSubmit} className={classes.button}>
+                        Submit      {loading && <CircularProgress />}
+                    </Button>}
+
+                </div>
+            </Paper>
         </>
     );
 }
