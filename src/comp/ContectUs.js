@@ -1,9 +1,6 @@
 import React, { memo, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { Input, Message } from 'rsuite'
@@ -76,7 +73,7 @@ function ContectUs() {
     return (
         <>
 
-            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)", zIndex: '200' }}>
+            <div className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)", zIndex: '200' }}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
@@ -147,7 +144,7 @@ function ContectUs() {
                     </Button>}
 
                 </div>
-            </Paper>
+            </div>
         </>
     );
 }
