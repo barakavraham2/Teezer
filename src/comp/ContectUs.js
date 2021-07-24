@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 export default function ContectUs() {
     const classes = useStyles();
     const [loading, setLoading] = useState(false);
-    const [scoping, setScoping] = useState(3)
     const [success, setSuccess] = useState(false);
     const [errorMessage, setErrormessage] = useState()
     const [form, setForm] = useState({
@@ -77,7 +76,6 @@ export default function ContectUs() {
         emailjs.send('service_we1c55s', 'template_i89x2f3', form)
             .then(function (response) {
                 setLoading(false)
-                setScoping(0)
                 setSuccess(true)
                 setErrormessage('')
             }, function (err) {
@@ -92,7 +90,7 @@ export default function ContectUs() {
                         Contact Us
                     </Typography>
                     <Grid container spacing={3} style={{ textAlign: 'center' }} >
-                        {!success && <>      <Grid item xs={12} sm={6}>
+                        <>      <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="outlined-basic"
@@ -124,7 +122,7 @@ export default function ContectUs() {
 
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} style={{ marginTop: '4px' }}>
                                 <Input
                                     id="outlined-basic"
                                     name="Message"
@@ -139,7 +137,6 @@ export default function ContectUs() {
                                 />
                             </Grid>
                         </>
-                        }
 
                         {success && <>
                             <Fade up>
