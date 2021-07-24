@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -12,6 +13,7 @@ import { validateContactUs } from '../helpers/contact'
 import { CircularProgress } from '@material-ui/core';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Fade from 'react-reveal/Fade';
+
 const useStyles = makeStyles((theme) => ({
     appBar: {
         position: 'relative',
@@ -51,9 +53,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ContectUs() {
+function ContectUs() {
     const classes = useStyles();
     const [loading, setLoading] = useState(false);
+    const [displayCircle, setDisplay] = useState('none')
     const [success, setSuccess] = useState(false);
     const [errorMessage, setErrormessage] = useState()
     const [form, setForm] = useState({
@@ -62,6 +65,7 @@ export default function ContectUs() {
         email: '',
         message: ''
     });
+
     const handleSubmit = () => {
         if (!loading) {
             setLoading(true)
@@ -76,6 +80,7 @@ export default function ContectUs() {
         emailjs.send('service_we1c55s', 'template_i89x2f3', form)
             .then(function (response) {
                 setLoading(false)
+                setDisplay('flex')
                 setSuccess(true)
                 setErrormessage('')
             }, function (err) {
@@ -86,11 +91,11 @@ export default function ContectUs() {
         <>
             <main className={classes.layout} >
                 <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
-                    <Typography component="h1" variant="h4" align="center" style={{ fontFamily: 'Montserrat' }}>
+                    <h1 style={{ fontFamily: 'Montserrat' }}>
                         Contact Us
-                    </Typography>
-                    <Grid container spacing={3} style={{ textAlign: 'center' }} >
-                        <>      <Grid item xs={12} sm={6}>
+                    </h1>
+                    <Grid container={!success} spacing={3} style={{ textAlign: 'center' }} >
+                        {!success && <>      <Grid item xs={12} sm={6}>
                             <TextField
                                 required
                                 id="outlined-basic"
@@ -122,7 +127,7 @@ export default function ContectUs() {
 
                                 />
                             </Grid>
-                            <Grid item xs={12} style={{ marginTop: '4px' }}>
+                            <Grid item xs={12}>
                                 <Input
                                     id="outlined-basic"
                                     name="Message"
@@ -137,10 +142,11 @@ export default function ContectUs() {
                                 />
                             </Grid>
                         </>
+                        }
 
                         {success && <>
                             <Fade up>
-                                <Grid item xs={12} className="align-items-xs-center" >
+                                <Grid item xs={12} className="align-items-xs-center" style={{ display: displayCircle }} >
                                     <CheckCircleOutlineIcon style={{ color: 'green', fontSize: '200px' }} />
                                 </Grid>
                             </Fade>
@@ -160,3 +166,5 @@ export default function ContectUs() {
         </>
     );
 }
+
+export default memo(ContectUs);
