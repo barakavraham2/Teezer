@@ -76,7 +76,7 @@ function ContectUs() {
     return (
         <>
 
-            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+            <Paper className={classes.paper} style={{ backgroundColor: "rgba(255,255,255,0.2)", zIndex: '200' }}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
