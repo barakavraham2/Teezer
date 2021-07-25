@@ -38,14 +38,14 @@ function ContactUsForm() {
     }
     return (
         <>
-            <Grid xs={12} sm={6}>
+            <Grid xs={12} sm={6} style={{ textAlign: 'center' }}>
                 <Input
                     name="firstName"
                     label="First name"
                     onChange={(id, e) => { e.preventDefault(); setFirstName(e.target.value) }}
-                    style={{ background: 'transparent ' }}
                     placeholder="First name"
                     type="text"
+                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
                 />
             </Grid>
             <Grid xs={12} sm={6}>
@@ -53,8 +53,8 @@ function ContactUsForm() {
                     name="lastName"
                     label="Last name"
                     onChange={(id, e) => { e.preventDefault(); setLastName(e.target.value) }}
-                    style={{ background: 'transparent ' }}
                     type="text"
+                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
                     placeholder="Last name"
                 />
             </Grid>
@@ -63,8 +63,8 @@ function ContactUsForm() {
                     name="Email"
                     label="Email"
                     onChange={(id, e) => { e.preventDefault(); setEmail(e.target.value) }}
-                    style={{ background: 'transparent ' }}
                     type="text"
+                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
                     placeholder="Email"
                 />
             </Grid>
@@ -74,9 +74,9 @@ function ContactUsForm() {
                     label="Message"
                     componentClass="textarea"
                     rows={6}
-                    style={{ background: 'transparent ' }}
                     placeholder="Message..."
                     type="text"
+                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
                     onChange={(id, e) => { e.preventDefault(); setMessage(e.target.value) }}
                 />
             </Grid>
