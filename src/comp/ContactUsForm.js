@@ -7,17 +7,17 @@ import * as emailjs from 'emailjs-com'
 import { init } from 'emailjs-com';
 import { validateContactUs } from '../helpers/contact'
 
-function ContactUsForm() {
-    const [form, setForm] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: ''
-    });
+const ContactUsForm = () => {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
     const [errorMessage, setErrormessage] = useState('')
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = () => {
+        const form = { firstName, lastName, email, message };
+        console.log(form)
         if (!loading) {
             setLoading(true)
         }
@@ -39,46 +39,48 @@ function ContactUsForm() {
     return (
         <>
             <Grid item xs={12} sm={6}>
-                <Input
+                <input
                     required
                     name="firstName"
                     label="First name"
-                    onChange={(id, e) => { setForm({ ...form, firstName: e.target.value }) }}
+                    onChange={e => setFirstName(e.target.value)}
                     style={{ background: 'transparent ' }}
                     placeholder="First name"
+                    type="text"
                 />
             </Grid>
             <Grid item xs={12} sm={6}>
-                <Input
+                <input
                     required
                     name="lastName"
                     label="Last name"
-                    onChange={(id, e) => { setForm({ ...form, lastName: e.target.value }) }}
+                    onChange={e => setLastName(e.target.value)}
                     style={{ background: 'transparent ' }}
+                    type="text"
                     placeholder="Last name"
                 />
             </Grid>
             <Grid item xs={12}>
-                <Input
+                <input
                     required
                     name="Email"
                     label="Email"
-                    onChange={(id, e) => { setForm({ ...form, email: e.target.value }) }}
+                    onChange={e => setEmail(e.target.value)}
                     style={{ background: 'transparent ' }}
+                    type="text"
                     placeholder="Email"
                 />
             </Grid>
             <Grid item xs={12}>
-                <Input
+                <input
                     name="Message"
                     label="Message"
                     componentClass="textarea"
                     rows={6}
                     style={{ background: 'transparent ' }}
                     placeholder="Message..."
-
-                    onChange={(id, e) => { setForm({ ...form, message: e.target.value }) }}
-
+                    type="text"
+                    onChange={e => setMessage(e.target.value)}
                 />
             </Grid>
             <Grid style={{ textAlign: 'center' }}>

@@ -2,6 +2,7 @@ import React, { memo, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import ContactUsForm from './ContactUsForm';
 import ContactSucsses from './ContactSucsses';
+import { Container } from 'rsuite';
 
 function ContectUs() {
     const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ function ContectUs() {
                     Contact Us
                 </h1>
                 <Grid style={{ textAlign: 'center' }} >
-                    <ContactUsForm />
+                    {success ? <ContactSucsses /> : <ContactUsForm />}
                 </Grid>
             </div>
         </>
