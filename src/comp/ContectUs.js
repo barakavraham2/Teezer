@@ -17,12 +17,12 @@ function ContectUs() {
     return (
         <>
 
-            <div style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+            <div style={{ backgroundColor: "rgba(255,255,255,0.3)" }}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
                 <Grid style={{ textAlign: 'center' }} >
-                    <ContactSucsses />
+                    <ContactUsForm />
                 </Grid>
             </div>
         </>
