@@ -7,7 +7,7 @@ import * as emailjs from 'emailjs-com'
 import { init } from 'emailjs-com';
 import { validateContactUs } from '../helpers/contact'
 
-function ContactUsForm() {
+function ContactUsForm(props) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -15,7 +15,6 @@ function ContactUsForm() {
     const [loading, setLoading] = useState(false);
 
     function open(funcName) {
-        console.log(funcName)
         Notification['error']({
             title: 'Error',
             description: <p>{funcName}</p>
@@ -36,6 +35,7 @@ function ContactUsForm() {
         emailjs.send('service_we1c55s', 'template_i89x2f3', form)
             .then(function (response) {
                 setLoading(false)
+                props.setSucsses(true)
             }, function (err) {
 
             });

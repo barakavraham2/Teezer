@@ -6,8 +6,8 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 function ContactSucsses() {
     return (
         <Fade up>
-            <Grid item xs={12} className="align-items-xs-center">
-                <CheckCircleOutlineIcon style={{ color: 'green', fontSize: '200px' }} />
+            <Grid xs={12} style={{ textAlign: 'center' }}>
+                <CheckCircleOutlineIcon style={{ color: 'green', fontSize: '200px', textAlign: 'center' }} />
             </Grid>
         </Fade>
     );

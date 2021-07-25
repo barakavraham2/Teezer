@@ -10,12 +10,19 @@
     max-width: 20%;
   }
 }
+.overFlow{
+  overflow: hidden;
+}
 .mb-2{
   margin-bottom: 5px;
+}
+.container{
+  min-width: 100%
 }
 .rs-content{
   display: flex;
   justify-content: center;
+  overflow: hidden;
   color: white;
   font-family: 'Montserrat', sans-serif; 
 }
@@ -23,6 +30,7 @@
   font-size: 10vw;
   height: fit-content;
 }
+/* התחלה אורך מקסימלי */
 @media only screen and (max-width: 600px) {
   .teezer{
     font-size: 22vw;
@@ -45,6 +53,7 @@
   }
 
 }
+/* סוף אורך מקסימלי */
 .comingsoon{
   text-align:center; 
   vertical-align: middle;
@@ -77,12 +86,16 @@
 }
 
 .logo{
-	background: linear-gradient(-45deg, #F25C54, #f73e34);
+background-image: url('../src/img/logo.png');
+background-position: center;
+background-size: cover;
 display: inline-block;
 overflow: hidden;
 position: absolute;
 padding: 20px;
 border-radius: 50%;
+height: 100px;
+width: 100px;
 top:-1px;
 margin-top: 10px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

@@ -30,7 +30,7 @@ function App() {
           </Route>
         </Switch>
       </Container>
-      <Fade up>
+      <Fade up style={{ overflow: 'hidden' }} >
         <AppFooter />
       </Fade>
     </div>

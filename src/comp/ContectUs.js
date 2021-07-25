@@ -7,7 +7,6 @@ import ico from '../img/favicon.png'
 function ContectUs() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
-
     return (
         <>
 
@@ -18,7 +17,7 @@ function ContectUs() {
                             Contact Us
                         </Panel>
                         <Form style={{ textAlign: 'left', width: '100%', fontWeight: 'bold' }} >
-                            {success ? <ContactSucsses /> : <ContactUsForm />}
+                            {success ? <ContactSucsses /> : <ContactUsForm setSucsses={setSuccess} sucsses={success} />}
                         </Form>
                     </FlexboxGrid.Item>
                 </FlexboxGrid>

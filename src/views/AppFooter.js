@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         backgroundColor: 'rgba(255, 255, 255, 0.3)',
         boxShadow: 'rgba(0, 0, 0, 0.50) 0px 1px 4px',
+        overflow: 'hidden',
         marginBottom: 0,
         fontFamily: 'Montserrat',
         fontWeight: 'bold'

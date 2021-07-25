@@ -2,12 +2,11 @@ import React from 'react';
 import { Content } from 'rsuite';
 import ico from '../img/favicon.png'
 import Fade from 'react-reveal/Fade';
-
+import logo from '../img/logo.png'
 function About() {
     return (
         <Content className="About">
             <div className="logo">
-                <img src={ico} className="logo-item" />
             </div>
             <Fade up>
                 <div className="AboutHead">
