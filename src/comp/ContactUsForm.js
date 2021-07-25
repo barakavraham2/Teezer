@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, ControlLabel, FormControl, FormGroup, Grid } from 'rsuite'
+import { Form, ControlLabel, FormControl, FormGroup, Grid, Notification } from 'rsuite'
 import { Input, Message } from 'rsuite'
 import { Button } from 'rsuite'
 import { CircularProgress } from '@material-ui/core';
@@ -12,32 +12,36 @@ function ContactUsForm() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
-    const [errorMessage, setErrormessage] = useState('')
     const [loading, setLoading] = useState(false);
 
+    function open(funcName) {
+        console.log(funcName)
+        Notification['error']({
+            title: 'Error',
+            description: <p>{funcName}</p>
+        });
+    }
     const handleSubmit = () => {
         const form = { firstName, lastName, email, message };
-        console.log(form)
         if (!loading) {
             setLoading(true)
         }
         const { error } = validateContactUs(form)
         if (error) {
             setLoading(false)
-            setErrormessage(error)
+            open(error.toString())
             return;
         }
         init("user_oh6qaIVQB2ErFmggHqScp");
         emailjs.send('service_we1c55s', 'template_i89x2f3', form)
             .then(function (response) {
                 setLoading(false)
-                setErrormessage('')
             }, function (err) {
 
             });
     }
     return (
-        <>
+        <Grid xs={12}>
             <FormGroup>
                 <ControlLabel>first name</ControlLabel>
                 <Input className="minWidth"
@@ -68,15 +72,11 @@ function ContactUsForm() {
                     style={{ borderColor: 'black' }}
                 />
             </FormGroup>
-            <Grid style={{ textAlign: 'center' }}>
-                {errorMessage && <Message type="error" description={errorMessage.toString()}></Message>}
-            </Grid>
-            <Grid xs={12}>
-                <Button onClick={handleSubmit}>
-                    Submit {loading && <CircularProgress />}
-                </Button>
-            </Grid>
-        </>
+            <Button onClick={handleSubmit} style={{ marginTop: '10px' }}>
+                Submit {loading && <CircularProgress />}
+            </Button>
+
+        </Grid>
     );
 }
 

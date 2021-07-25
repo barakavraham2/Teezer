@@ -14,7 +14,7 @@ function ContectUs() {
             <Content style={{ color: 'black', marginBottom: '10px' }}>
                 <FlexboxGrid justify="center">
                     <FlexboxGrid.Item>
-                        <Panel style={{ fontFamily: 'Montserrat', fontWeight: 'bold' }}>
+                        <Panel style={{ fontFamily: 'Montserrat', fontWeight: 'bold', textAlign: 'center' }}>
                             Contact Us
                         </Panel>
                         <Form style={{ textAlign: 'left', width: '100%', fontWeight: 'bold' }} >
