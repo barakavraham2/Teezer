@@ -7,7 +7,7 @@ import * as emailjs from 'emailjs-com'
 import { init } from 'emailjs-com';
 import { validateContactUs } from '../helpers/contact'
 
-const ContactUsForm = () => {
+function ContactUsForm() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -38,41 +38,38 @@ const ContactUsForm = () => {
     }
     return (
         <>
-            <Grid item xs={12} sm={6}>
-                <input
-                    required
+            <Grid xs={12} sm={6}>
+                <Input
                     name="firstName"
                     label="First name"
-                    onChange={e => setFirstName(e.target.value)}
+                    onChange={(id, e) => { e.preventDefault(); setFirstName(e.target.value) }}
                     style={{ background: 'transparent ' }}
                     placeholder="First name"
                     type="text"
                 />
             </Grid>
-            <Grid item xs={12} sm={6}>
-                <input
-                    required
+            <Grid xs={12} sm={6}>
+                <Input
                     name="lastName"
                     label="Last name"
-                    onChange={e => setLastName(e.target.value)}
+                    onChange={(id, e) => { e.preventDefault(); setLastName(e.target.value) }}
                     style={{ background: 'transparent ' }}
                     type="text"
                     placeholder="Last name"
                 />
             </Grid>
-            <Grid item xs={12}>
-                <input
-                    required
+            <Grid xs={12}>
+                <Input
                     name="Email"
                     label="Email"
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(id, e) => { e.preventDefault(); setEmail(e.target.value) }}
                     style={{ background: 'transparent ' }}
                     type="text"
                     placeholder="Email"
                 />
             </Grid>
-            <Grid item xs={12}>
-                <input
+            <Grid xs={12}>
+                <Input
                     name="Message"
                     label="Message"
                     componentClass="textarea"
@@ -80,13 +77,13 @@ const ContactUsForm = () => {
                     style={{ background: 'transparent ' }}
                     placeholder="Message..."
                     type="text"
-                    onChange={e => setMessage(e.target.value)}
+                    onChange={(id, e) => { e.preventDefault(); setMessage(e.target.value) }}
                 />
             </Grid>
             <Grid style={{ textAlign: 'center' }}>
-                {errorMessage && <Message type="error" description={String(errorMessage)}></Message>}
+                {errorMessage && <Message type="error" description={errorMessage.toString()}></Message>}
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12}>
                 <Button onClick={handleSubmit}>
                     Submit {loading && <CircularProgress />}
                 </Button>
