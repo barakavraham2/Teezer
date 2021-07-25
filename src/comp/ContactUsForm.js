@@ -50,7 +50,7 @@ function ContactUsForm(props) {
                 />
             </FormGroup>
             <FormGroup>
-                <ControlLabel>first name</ControlLabel>
+                <ControlLabel>last name</ControlLabel>
                 <Input className="minWidth"
                     onChange={(id, e) => { setLastName(e.target.value) }}
                     style={{ borderColor: 'black' }}
@@ -72,7 +72,7 @@ function ContactUsForm(props) {
                     style={{ borderColor: 'black' }}
                 />
             </FormGroup>
-            <Button onClick={handleSubmit} style={{ marginTop: '10px' }}>
+            <Button onClick={handleSubmit} style={{ marginTop: '10px', fontWeight: 'bold', backgroundColor: 'transparent' }}>
                 Submit {loading && <CircularProgress />}
             </Button>
 
