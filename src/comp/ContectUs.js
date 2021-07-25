@@ -22,7 +22,7 @@ function ContectUs() {
                     Contact Us
                 </h1>
                 <Grid style={{ textAlign: 'center' }} >
-                    {success ? <ContactSucsses /> : <ContactUsForm />}
+                    <ContactSucsses />
                 </Grid>
             </div>
         </>
