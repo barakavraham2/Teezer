@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid } from 'rsuite'
+import { Form, ControlLabel, FormControl, FormGroup, Grid } from 'rsuite'
 import { Input, Message } from 'rsuite'
 import { Button } from 'rsuite'
 import { CircularProgress } from '@material-ui/core';
@@ -38,48 +38,35 @@ function ContactUsForm() {
     }
     return (
         <>
-            <Grid xs={12} sm={6} style={{ textAlign: 'center' }}>
-                <Input
-                    name="firstName"
-                    label="First name"
+            <FormGroup>
+                <ControlLabel>first name</ControlLabel>
+                <FormControl
                     onChange={(id, e) => { e.preventDefault(); setFirstName(e.target.value) }}
-                    placeholder="First name"
-                    type="text"
-                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
+                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
                 />
-            </Grid>
-            <Grid xs={12} sm={6}>
-                <Input
-                    name="lastName"
-                    label="Last name"
+            </FormGroup>
+            <FormGroup>
+                <ControlLabel>first name</ControlLabel>
+                <FormControl
                     onChange={(id, e) => { e.preventDefault(); setLastName(e.target.value) }}
-                    type="text"
-                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
-                    placeholder="Last name"
+                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
                 />
-            </Grid>
-            <Grid xs={12}>
-                <Input
-                    name="Email"
-                    label="Email"
+            </FormGroup>
+            <FormGroup>
+                <ControlLabel>Email</ControlLabel>
+                <FormControl
                     onChange={(id, e) => { e.preventDefault(); setEmail(e.target.value) }}
-                    type="text"
-                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
-                    placeholder="Email"
+                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
                 />
-            </Grid>
-            <Grid xs={12}>
-                <Input
-                    name="Message"
-                    label="Message"
+            </FormGroup>
+            <FormGroup>
+                <ControlLabel>Message</ControlLabel>
+                <FormControl
                     componentClass="textarea"
-                    rows={6}
-                    placeholder="Message..."
-                    type="text"
-                    style={{ width: ' 500px', padding: 10, fontSize: 15, background: 'transparent ' }}
+                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
                     onChange={(id, e) => { e.preventDefault(); setMessage(e.target.value) }}
                 />
-            </Grid>
+            </FormGroup>
             <Grid style={{ textAlign: 'center' }}>
                 {errorMessage && <Message type="error" description={errorMessage.toString()}></Message>}
             </Grid>

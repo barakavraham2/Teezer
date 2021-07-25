@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import ContactUsForm from './ContactUsForm';
 import ContactSucsses from './ContactSucsses';
-import { Container } from 'rsuite';
+import { Container, Form } from 'rsuite';
 
 function ContectUs() {
     const [loading, setLoading] = useState(false);
@@ -18,14 +18,14 @@ function ContectUs() {
     return (
         <>
 
-            <div style={{ backgroundColor: "rgba(255,255,255,0.3)" }}>
+            <Container className="contactUsContainer" style={{ backgroundColor: "rgba(255,255,255,0.3)" }}>
                 <h1 style={{ fontFamily: 'Montserrat' }}>
                     Contact Us
                 </h1>
-                <Grid style={{ textAlign: 'center' }} >
+                <Form style={{ textAlign: 'center' }} >
                     {success ? <ContactSucsses /> : <ContactUsForm />}
-                </Grid>
-            </div>
+                </Form>
+            </Container>
         </>
     );
 }

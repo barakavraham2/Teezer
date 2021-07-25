@@ -1,15 +1,14 @@
 
 .container {
-	background: linear-gradient(-45deg, #2A9D8F, #F25C54, #F7B267, #F25C54);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	min-height: 100vh;
+min-height: 100vh;
 }
+
 .page{
 	background: linear-gradient(-45deg, #2A9D8F, #F25C54, #F7B267, #F25C54);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
+
 #instagram{
 	background-image: url('../src/img/instagram.png');
 	background-position: center;
