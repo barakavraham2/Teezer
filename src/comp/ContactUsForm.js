@@ -40,31 +40,32 @@ function ContactUsForm() {
         <>
             <FormGroup>
                 <ControlLabel>first name</ControlLabel>
-                <FormControl
-                    onChange={(id, e) => { e.preventDefault(); setFirstName(e.target.value) }}
-                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
+                <Input className="minWidth"
+                    onChange={(id, e) => { setFirstName(e.target.value) }}
+                    style={{ borderColor: 'black' }}
                 />
             </FormGroup>
             <FormGroup>
                 <ControlLabel>first name</ControlLabel>
-                <FormControl
-                    onChange={(id, e) => { e.preventDefault(); setLastName(e.target.value) }}
-                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
+                <Input className="minWidth"
+                    onChange={(id, e) => { setLastName(e.target.value) }}
+                    style={{ borderColor: 'black' }}
                 />
             </FormGroup>
             <FormGroup>
                 <ControlLabel>Email</ControlLabel>
-                <FormControl
-                    onChange={(id, e) => { e.preventDefault(); setEmail(e.target.value) }}
-                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
+                <Input className="minWidth"
+                    onChange={(id, e) => { setEmail(e.target.value) }}
+                    style={{ borderColor: 'black' }}
                 />
             </FormGroup>
             <FormGroup>
                 <ControlLabel>Message</ControlLabel>
-                <FormControl
+                <Input className="minWidth"
                     componentClass="textarea"
-                    style={{ padding: 10, fontSize: 15, background: 'transparent ' }}
-                    onChange={(id, e) => { e.preventDefault(); setMessage(e.target.value) }}
+                    rows='4'
+                    onChange={(id, e) => { setMessage(e.target.value) }}
+                    style={{ borderColor: 'black' }}
                 />
             </FormGroup>
             <Grid style={{ textAlign: 'center' }}>

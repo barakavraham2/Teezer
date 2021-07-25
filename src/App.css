@@ -2,7 +2,12 @@
 .container {
 min-height: 100vh;
 }
-
+.minWidth{
+	min-width:100% ;
+	padding: 10px ;
+	font-size: 15px ;
+	background-color: transparent !important ;
+}
 .page{
 	background: linear-gradient(-45deg, #2A9D8F, #F25C54, #F7B267, #F25C54);
 	background-size: 400% 400%;
